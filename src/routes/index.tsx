@@ -450,7 +450,7 @@ function Footer() {
           <div className="font-display font-bold text-white mb-3">Contact</div>
           <ul className="space-y-2 text-sm">
             <li><a href={PHONE_HREF} className="hover:text-sky transition">{PHONE}</a></li>
-            <li></li>
+            
             <li>Open 24 Hours</li>
           </ul>
         </div>
