@@ -32,6 +32,8 @@
   --color-sky: var(--sky);
   --color-sky-deep: var(--sky-deep);
   --color-surface: var(--surface);
+  --color-brand: var(--brand);
+  --color-brand-soft: var(--brand-soft);
   --font-display: "Montserrat", system-ui, sans-serif;
   --font-body: "Open Sans", system-ui, sans-serif;
 }
@@ -39,10 +41,13 @@
 :root {
   --radius: 0.75rem;
 
-  --navy: oklch(0.34 0.09 252);
+  --navy: oklch(0.32 0.13 268);
   --sky: oklch(0.78 0.14 230);
   --sky-deep: oklch(0.6 0.16 240);
   --surface: oklch(0.985 0.005 240);
+  --brand: oklch(0.82 0.09 13);          /* logo pink */
+  --brand-soft: oklch(0.94 0.04 13);
+
 
   --background: oklch(1 0 0);
   --foreground: oklch(0.2 0.04 252);

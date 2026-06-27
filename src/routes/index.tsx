@@ -440,8 +440,8 @@ function Footer() {
     <footer className="bg-primary text-white/80 py-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8 items-start">
         <div>
-          <div className="flex items-center gap-2 mb-3">
-            <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-cta"><Droplets className="h-5 w-5" /></span>
+          <div className="flex items-center gap-2.5 mb-3">
+            <img src={logoAsset.url} alt="Polar Shine logo" className="h-11 w-11 rounded-full object-cover ring-2 ring-white/30" width={44} height={44} />
             <span className="font-display font-extrabold text-lg text-white">Polar Shine</span>
           </div>
           <p className="text-sm leading-relaxed">Toronto's trusted window cleaning professionals. Crystal clear results, every time.</p>
