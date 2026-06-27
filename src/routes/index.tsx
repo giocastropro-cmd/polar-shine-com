@@ -5,6 +5,8 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import heroImage from "@/assets/hero-home.jpg";
+import logoAsset from "@/assets/polar-shine-logo.jpg.asset.json";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -49,14 +51,13 @@ function Nav() {
   return (
     <header className="sticky top-0 z-40 backdrop-blur-md bg-background/85 border-b border-border">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
-        <a href="#top" className="flex items-center gap-2 min-w-0">
-          <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-gradient-cta shadow-glow">
-            <Droplets className="h-5 w-5 text-white" />
-          </span>
+        <a href="#top" className="flex items-center gap-2.5 min-w-0">
+          <img src={logoAsset.url} alt="Polar Shine Window Cleaning logo" className="h-11 w-11 shrink-0 rounded-full object-cover ring-2 ring-brand/40" width={44} height={44} />
           <span className="font-display font-extrabold text-base sm:text-lg truncate text-primary">
             Polar Shine
           </span>
         </a>
+
         <nav className="hidden lg:flex items-center gap-7">
           {links.map(([label, href]) => (
             <a key={href} href={href} className="text-sm font-semibold text-muted-foreground hover:text-primary transition">
@@ -439,8 +440,8 @@ function Footer() {
     <footer className="bg-primary text-white/80 py-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8 items-start">
         <div>
-          <div className="flex items-center gap-2 mb-3">
-            <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-cta"><Droplets className="h-5 w-5" /></span>
+          <div className="flex items-center gap-2.5 mb-3">
+            <img src={logoAsset.url} alt="Polar Shine logo" className="h-11 w-11 rounded-full object-cover ring-2 ring-white/30" width={44} height={44} />
             <span className="font-display font-extrabold text-lg text-white">Polar Shine</span>
           </div>
           <p className="text-sm leading-relaxed">Toronto's trusted window cleaning professionals. Crystal clear results, every time.</p>
