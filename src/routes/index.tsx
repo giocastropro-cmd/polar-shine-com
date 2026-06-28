@@ -291,13 +291,6 @@ function Services() {
             desc="Present your business at its best with spotless windows."
             items={["Offices", "Retail Stores", "Restaurants", "Medical Clinics", "Apartment Buildings"]}
           />
-          <ServiceCard
-            tint="mix"
-            icon={<Sparkles className="h-7 w-7" />}
-            title="Hard-to-Reach Windows"
-            desc="Advanced water-fed pole technology — safer, faster, better."
-            items={["No landscape damage", "No risky ladders", "Reaches 2+ storeys", "Pure-water finish", "Faster service", "Streak-free results"]}
-          />
         </div>
       </div>
     </section>
@@ -494,7 +487,7 @@ function Contact() {
                   <span className="grid h-12 w-12 place-items-center rounded-xl bg-white/15 backdrop-blur"><Home className="h-5 w-5 text-white" /></span>
                   <span>
                     <div className="text-[0.7rem] uppercase tracking-[0.18em] text-white/80">Service Area</div>
-                    <div className="font-display font-bold text-white">Toronto & GTA</div>
+                    <div className="font-display font-bold text-white">Toronto</div>
                   </span>
                 </div>
               </div>
@@ -506,10 +499,9 @@ function Contact() {
               <div className="space-y-4">
                 <Field label="Name"><input required className="ps-input" placeholder="Your name" /></Field>
                 <Field label="Phone"><input required type="tel" className="ps-input" placeholder="(647) 555-0123" /></Field>
-                <Field label="Email"><input type="email" className="ps-input" placeholder="you@email.com" /></Field>
                 <Field label="Service Type">
                   <select className="ps-input">
-                    <option>Residential</option><option>Commercial</option><option>Hard-to-Reach</option>
+                    <option>Residential</option><option>Commercial</option>
                   </select>
                 </Field>
                 <Field label="Message"><textarea rows={3} className="ps-input resize-none" placeholder="Tell us about your property" /></Field>
@@ -553,7 +545,7 @@ function Footer() {
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li><a href={PHONE_HREF} className="hover:text-primary transition">{PHONE}</a></li>
             <li>Open 24 Hours</li>
-            <li>Toronto & GTA</li>
+            <li>Toronto</li>
           </ul>
         </div>
         <div>
@@ -561,7 +553,6 @@ function Footer() {
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li>Residential Window Cleaning</li>
             <li>Commercial Window Cleaning</li>
-            <li>Hard-to-Reach Windows</li>
           </ul>
         </div>
       </div>
