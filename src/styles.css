@@ -28,51 +28,66 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-navy: var(--navy);
+  --color-ink: var(--ink);
   --color-sky: var(--sky);
+  --color-sky-soft: var(--sky-soft);
   --color-sky-deep: var(--sky-deep);
   --color-surface: var(--surface);
-  --color-brand: var(--brand);
-  --color-brand-soft: var(--brand-soft);
-  --font-display: "Montserrat", system-ui, sans-serif;
-  --font-body: "Open Sans", system-ui, sans-serif;
+  --color-blush: var(--blush);
+  --color-blush-soft: var(--blush-soft);
+  --color-blush-deep: var(--blush-deep);
+  --font-display: "Sora", system-ui, sans-serif;
+  --font-body: "Manrope", system-ui, sans-serif;
 }
 
 :root {
-  --radius: 0.75rem;
+  --radius: 1rem;
 
-  --navy: oklch(0.32 0.13 268);
-  --sky: oklch(0.78 0.14 230);
-  --sky-deep: oklch(0.6 0.16 240);
-  --surface: oklch(0.985 0.005 240);
-  --brand: oklch(0.82 0.09 13);          /* logo pink */
-  --brand-soft: oklch(0.94 0.04 13);
+  /* Soft Sky & Blush — vision-friendly */
+  --ink: oklch(0.32 0.07 250);            /* deep slate-blue text, not black */
+  --sky-soft: oklch(0.96 0.025 240);      /* #EAF4FF */
+  --sky: oklch(0.78 0.10 235);            /* #7BB8F0 */
+  --sky-deep: oklch(0.58 0.13 240);       /* readable accent blue */
+  --blush-soft: oklch(0.97 0.018 10);     /* whisper pink */
+  --blush: oklch(0.87 0.06 10);           /* #F8C8D8 */
+  --blush-deep: oklch(0.74 0.11 12);      /* readable pink accent */
+  --surface: oklch(0.985 0.012 240);      /* warm-white sky tint */
 
-
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.2 0.04 252);
+  --background: oklch(0.995 0.004 240);   /* off-white, easier on eyes */
+  --foreground: var(--ink);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.2 0.04 252);
+  --card-foreground: var(--ink);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.2 0.04 252);
-  --primary: var(--navy);
-  --primary-foreground: oklch(0.99 0 0);
-  --secondary: var(--sky);
-  --secondary-foreground: oklch(0.2 0.04 252);
-  --muted: oklch(0.96 0.01 240);
-  --muted-foreground: oklch(0.45 0.03 252);
-  --accent: var(--sky);
-  --accent-foreground: oklch(0.2 0.04 252);
+  --popover-foreground: var(--ink);
+  --primary: var(--sky-deep);
+  --primary-foreground: oklch(0.995 0 0);
+  --secondary: var(--blush);
+  --secondary-foreground: var(--ink);
+  --muted: oklch(0.96 0.012 240);
+  --muted-foreground: oklch(0.50 0.04 248);
+  --accent: var(--blush-soft);
+  --accent-foreground: var(--ink);
   --destructive: oklch(0.6 0.22 27);
   --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.92 0.01 240);
-  --input: oklch(0.92 0.01 240);
+  --border: oklch(0.92 0.018 240);
+  --input: oklch(0.92 0.018 240);
   --ring: var(--sky);
 
-  --gradient-hero: linear-gradient(135deg, oklch(0.28 0.09 252 / 0.85), oklch(0.4 0.12 240 / 0.7));
-  --gradient-cta: linear-gradient(135deg, var(--sky-deep), var(--sky));
-  --shadow-glow: 0 20px 60px -20px color-mix(in oklab, var(--sky) 50%, transparent);
-  --shadow-soft: 0 10px 40px -15px color-mix(in oklab, var(--navy) 30%, transparent);
+  /* Calm, layered gradients — never harsh */
+  --gradient-hero: linear-gradient(135deg,
+    oklch(0.99 0.01 240) 0%,
+    oklch(0.96 0.025 235) 45%,
+    oklch(0.94 0.04 10) 100%);
+  --gradient-cta: linear-gradient(135deg, var(--sky-deep) 0%, var(--blush-deep) 100%);
+  --gradient-soft: linear-gradient(160deg, var(--sky-soft) 0%, var(--blush-soft) 100%);
+  --gradient-aurora: radial-gradient(60% 80% at 20% 10%, oklch(0.92 0.06 235 / 0.55), transparent 60%),
+                     radial-gradient(50% 70% at 90% 30%, oklch(0.92 0.05 10 / 0.55), transparent 60%),
+                     radial-gradient(70% 60% at 50% 100%, oklch(0.95 0.03 240 / 0.7), transparent 60%);
+
+  --shadow-glow: 0 24px 60px -24px color-mix(in oklab, var(--sky-deep) 35%, transparent);
+  --shadow-blush: 0 24px 60px -24px color-mix(in oklab, var(--blush-deep) 35%, transparent);
+  --shadow-soft: 0 18px 50px -22px color-mix(in oklab, var(--sky-deep) 22%, transparent);
+  --shadow-ring: 0 0 0 1px color-mix(in oklab, var(--sky-deep) 12%, transparent);
 }
 
 @layer base {
@@ -82,18 +97,68 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-body);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
-  h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); letter-spacing: -0.02em; }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.025em;
+    color: var(--ink);
+  }
+  ::selection { background: color-mix(in oklab, var(--blush) 60%, transparent); color: var(--ink); }
+}
+
+@utility text-gradient-brand {
+  background: linear-gradient(120deg, var(--sky-deep) 0%, var(--blush-deep) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 @utility text-gradient-sky {
-  background: linear-gradient(135deg, var(--sky), oklch(0.85 0.12 200));
+  background: linear-gradient(120deg, var(--sky-deep), var(--sky));
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
 }
 
 @utility shadow-glow { box-shadow: var(--shadow-glow); }
+@utility shadow-blush { box-shadow: var(--shadow-blush); }
 @utility shadow-soft { box-shadow: var(--shadow-soft); }
+@utility shadow-ring { box-shadow: var(--shadow-ring); }
 @utility bg-gradient-cta { background: var(--gradient-cta); }
 @utility bg-gradient-hero { background: var(--gradient-hero); }
+@utility bg-gradient-soft { background: var(--gradient-soft); }
+@utility bg-gradient-aurora { background: var(--gradient-aurora); }
+
+@utility grain-overlay {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.35;
+    mix-blend-mode: overlay;
+    background-image: radial-gradient(circle at 25% 35%, oklch(1 0 0 / 0.5) 0.5px, transparent 1px),
+                      radial-gradient(circle at 70% 65%, oklch(1 0 0 / 0.35) 0.5px, transparent 1px);
+    background-size: 3px 3px, 5px 5px;
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-18px) translateX(8px); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@utility animate-float { animation: float-slow 9s ease-in-out infinite; }
+@utility animate-rise { animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
